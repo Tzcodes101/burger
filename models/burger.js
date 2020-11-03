@@ -22,3 +22,5 @@ const burger = {
         }, condition, cb);
     }
 };
+
+module.exports = burger;
