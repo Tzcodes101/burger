@@ -21,10 +21,18 @@ router.post("/burgers/add", function(req, res) {
     burger.insertBurger(req.body.burger_name, function(result){
         console.log("Your new burger: " + result);
         res.redirect("/");
-    })
-})
+    });
+});
 
 //put route
+router.put("/burgers/:id", function(req, res) {
+    burger.updateBurger(req.params.id, function(result) {
+        console.log(result);
+        res.sendStatus(200);
+    });
+});
+
+module.exports = router;
 
 
 
