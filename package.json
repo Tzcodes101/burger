@@ -1,0 +1,23 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "track your burgers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tzcodes101/burger.git"
+  },
+  "keywords": [
+    "burger"
+  ],
+  "author": "Talia Zisman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tzcodes101/burger/issues"
+  },
+  "homepage": "https://github.com/Tzcodes101/burger#readme"
+}
