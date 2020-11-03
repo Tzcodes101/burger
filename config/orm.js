@@ -1,5 +1,6 @@
 const connection = require("./connection.js");
 
+//create question marks for queries
 function addQMarks(number) {
     let array = [];
 
@@ -9,6 +10,7 @@ function addQMarks(number) {
     return array.toString();
 };
 
+//turn objects so can be read by sql
 function objecToSql(object) {
     let array = [];
     for (var i = 0; i < number; i++) {
@@ -20,8 +22,8 @@ function objecToSql(object) {
 const orm = {
 
     //select all burgers
-    selectAll: function(tableInput, cb) {
-        const query = "Select * FROM " + tableInput + ";";
+    selectAll: function(tableName, cb) {
+        const query = "Select * FROM " + tableName + ";";
         connection.query(query, function(err, result) {
             if (err) throw err;
             cb(result);
