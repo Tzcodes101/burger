@@ -14,6 +14,11 @@ const burger = {
         orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], cb);
     },
 
-    //update burger
-    
-}
+    //update burger, will change devoured to true
+    updateBurger: function(id, cb) {
+        const condition = "id=" + id;
+        orm.updateBurger("burgers", {
+            devoured: true
+        }, condition, cb);
+    }
+};
