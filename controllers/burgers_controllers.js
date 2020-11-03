@@ -19,7 +19,7 @@ router.get("/burgers", function(req, res) {
 //post route, then go back to home page 
 router.post("/burgers/add", function(req, res) {
     burger.insertBurger(req.body.burger_name, function(result){
-        console.log("Your new burger: " + result);
+        console.log(result);
         res.redirect("/");
     });
 });

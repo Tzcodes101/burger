@@ -1,6 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const routes = require("./controllers/burgers_controllers");
+const routes = require("./controllers/burgers_controllers.js");
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(routes);
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view enginer", "handlebars");
+app.set("view engine", "handlebars");
 
 app.listen(PORT, function(err) {
     if (err) {
