@@ -18,17 +18,27 @@ router.get("/burgers", function(req, res) {
 
 //post route, then go back to home page 
 router.post("/burgers/add", function(req, res) {
-    burger.insertBurger(req.body.burger_name, function(result){
-        console.log(result);
+    burger.insertBurger(
+        "burgers", ["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+        res.json({ id: result.insertID });
         res.redirect("/");
     });
 });
 
 //put route
 router.put("/burgers/:id", function(req, res) {
-    burger.updateBurger(req.params.id, function(result) {
+    var condition = "id = " + req.params.id;
+    console.log("condition", condition);
+
+    burger.updateBurger({
+        id: req.params.id
+    }, condition, function(result) {
+        if (result.changedRows == 0 ) {
+            return res.status(404).end();
+        } else {
         console.log(result);
         res.sendStatus(200);
+        }
     });
 });
 

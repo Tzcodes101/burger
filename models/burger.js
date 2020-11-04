@@ -10,13 +10,15 @@ const burger = {
     },
 
     //add burger
-    insertBurger: function(name, cb) {
-        orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], cb);
+    insertBurger: function(columns, values, cb) {
+        orm.insertOne("burgers", columns, values, function(res) {
+            cb(res);
+        });
     },
 
     //update burger, will change devoured to true
     updateBurger: function(id, cb) {
-        const condition = "id=" + id;
+        let condition = "id=" + id;
         orm.updateBurger("burgers", {
             devoured: true
         }, condition, cb);

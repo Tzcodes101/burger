@@ -19,11 +19,11 @@ function objecToSql(object) {
     return array.toString();
 };
 
-const orm = {
+var orm = {
 
     //select all burgers
     selectAll: function(tableName, cb) {
-        const query = "Select * FROM " + tableName + ";";
+        let query = "Select * FROM " + tableName + ";";
         connection.query(query, function(err, result) {
             if (err) throw err;
             cb(result);
@@ -32,7 +32,7 @@ const orm = {
 
     //insert a burger
     insertOne: function(table, columns, values, cb) {
-        const query = "INSERT INTO " + table;
+        let query = "INSERT INTO " + table;
 
         query += " (";
         query += columns.toString();
@@ -51,7 +51,7 @@ const orm = {
 
     //update a burger
     updateBurger: function(table, colValsAsObj, condition, cb) {
-        const query = "UPDATE " + table;
+        let query = "UPDATE " + table;
 
         query += "SET";
         query += objecToSql(colValsAsObj);
