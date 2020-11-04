@@ -56,7 +56,7 @@ var orm = {
     },
 
     //update a burger
-    updateBurger: function(table, objColVals, condition, cb) {
+    updateOne: function(table, objColVals, condition, cb) {
         let query = "UPDATE " + table;
 
         query += "SET";

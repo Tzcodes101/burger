@@ -18,7 +18,7 @@ router.get("/burgers", function(req, res) {
 
 //post route, then go back to home page 
 router.post("/burgers/add", function(req, res) {
-    burger.insertBurger(
+    burger.insertOne(
         ["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
         res.json({ id: result.insertId });
         res.redirect("/");
@@ -30,7 +30,7 @@ router.put("/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
 
-    burger.updateBurger({
+    burger.updateOne({
         devoured: req.body.devoured}, condition, function(result) {
         if (result.changedRows === 0 ) {
             return res.status(404).end();
