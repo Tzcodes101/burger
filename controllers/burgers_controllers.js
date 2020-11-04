@@ -1,8 +1,8 @@
 const express = require("express");
-const burger = require("../models/burger.js");
+let burger = require("../models/burger.js");
 
 //create router
-const router = express.Router();
+let router = express.Router();
 
 //get route for index (aka home)
 router.get("/", function(req, res) {
@@ -12,15 +12,15 @@ router.get("/", function(req, res) {
 //get route for all
 router.get("/burgers", function(req, res) {
     burger.selectAll(function(burgerData) {
-        res.render("index", {burger_date: burgerData})
+        res.render("index", {burger_data: burgerData})
     });
 });
 
 //post route, then go back to home page 
 router.post("/burgers/add", function(req, res) {
     burger.insertBurger(
-        "burgers", ["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
-        res.json({ id: result.insertID });
+        ["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+        res.json({ id: result.insertId });
         res.redirect("/");
     });
 });
