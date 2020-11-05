@@ -11,18 +11,15 @@ This application allows a user to track burgers that have been devoured. A user 
 
 ## Table of Contents
 - [Description](#Description)
-- [Installation](#Installation)
 - [Usage](#Usage)
 - [License](#License)
 - [Contributors](#Contributors)
 - [Testing](#Testing)
 - [Questions](#Questions)
 
-## Installation
-To install, a user must clone the code for the project from it's GitHub repository (https://github.com/Tzcodes101/burger) to their local workspace. The user must then run npm install inquirer, as well as jest. A user must also have node.js installed and working on their computer.
 
 ## Usage
-To use this project, a user must open server.js in an integrated terminal. The user can then run node app.js, answering the questions in the terminal. Once all questions are complete, the answers will be added to the html templates, and can be opened in the browser.
+A user can access this project from this link:
 
 ## License
 This project is not covered by any license.
