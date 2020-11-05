@@ -19,7 +19,7 @@ This application allows a user to track burgers that have been devoured. A user 
 
 
 ## Usage
-A user can access this project from this link:
+A user can access this project from this link: https://evening-harbor-99452.herokuapp.com/burgers.
 
 ## License
 This project is not covered by any license.
