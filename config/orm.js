@@ -1,10 +1,10 @@
 const connection = require("./connection.js");
 
 //create question marks for queries
-function addQMarks(number) {
+function addQMarks(num) {
     var array = [];
 
-    for (var i = 0; i < number; i++) {
+    for (var i = 0; i < num; i++) {
         array.push("?");
     }
     return array.toString();
@@ -13,14 +13,16 @@ function addQMarks(number) {
 //turn objects so can be read by sql
 function objecToSql(object) {
     var array = [];
-    for (var i = 0; i < number; i++) {
-        var value = ob[key];
+
+    for (var key in object) {
+        var value = object[key];
         if(Object.hasOwnProperty.call(object, key)) {
             if (typeof value === "string" && value.indexOf(" ") >=0) {
                 value = " ' " + value + " ' ";
             };
-        }
+
         array.push(key + "=" + value);
+        }
     }
     return array.toString();
 };
@@ -59,9 +61,9 @@ var orm = {
     updateOne: function(table, objColVals, condition, cb) {
         let query = "UPDATE " + table;
 
-        query += "SET";
+        query += " SET ";
         query += objecToSql(objColVals);
-        query += " Where ";
+        query += " WHERE ";
         query += condition;
 
         console.log(query);
