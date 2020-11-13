@@ -5,9 +5,9 @@ let burger = require("../models/burger.js");
 let router = express.Router();
 
 //get route for index (aka home)
-router.get("/", function(req, res) {
-    res.redirect("/burgers");
-});
+// router.get("/", function(req, res) {
+//     res.redirect("/burgers");
+// });
 
 //get route for all
 router.get("/burgers", function(req, res) {
