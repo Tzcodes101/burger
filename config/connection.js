@@ -1,3 +1,4 @@
+require("dotenv").config();
 // Connect Node to MySQL.
 var mysql = require("mysql");
 
@@ -11,7 +12,7 @@ connection = mysql.createConnection({
         port: 3306,
         host: "localhost",
         user: "root",
-        password: "Wally17mane!",
+        password: process.env.password,
         database: "burgers_db"
 })};
 
