@@ -7,6 +7,8 @@
 ## Description
 This application allows a user to track burgers that have been devoured. A user can add a new burger, change the status of "devoured", and delete a burger.
 
+![Image of application](public/assets/images/eatDaBurger.jpg)
+
 
 
 ## Table of Contents
