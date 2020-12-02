@@ -38,7 +38,7 @@ The languages and frameworks used in this project include:
 ## License
 ![badge](https://img.shields.io/badge/license-ISC-brightgreen)
 
-This project is not covered by the ISC license.
+This project is covered by the ISC license.
 
 ## Contributors
 - Talia Zisman
